@@ -10,12 +10,18 @@
 			- Es el “agente Kubernetes ”, un servicio que se ejecuta en cada nodo Kubernetes y es responsable de crear el contenedor según las instrucciones del plano de control.
 	* etcd
 			- Es un **almacén de valores clave distribuido de código abierto** que se utiliza para almacenar y administrar la información crítica que los sistemas distribuidos necesitan para seguir funcionando.
+	- Namespaces
+		- **default**: Es el namespace donde se crean los recursos por defecto si no se especifica otro namespace al crear un recurso.
+		- **kube-node-lease**: Se usa para gestionar los leases (arrendamientos) de los nodos, lo que ayuda a Kubernetes a rastrear el estado de los nodos de su clúster.
+		- **kube-public**: Un namespace que es accesible por cualquier persona. Generalmente, se utiliza para almacenar recursos que deben ser públicos, como ConfigMaps con configuraciones globales.
+		- **kube-system**: Es donde se encuentran los recursos esenciales de Kubernetes, como los pods del sistema y los controladores. Este namespace contiene los componentes fundamentales para que Kubernetes funcione, como el **kube-dns**, **kube-apiserver**, y otros.
 
 ---
 
 - **Comandos**
 	- Listar espacios de nombres
 			- $ kubectl get namespaces
+			- $ kubectl get ns
 	- Mostrar los pods en el espacio de nombre actual
 			- $ kubectl get pods
 	- Mostrar los pods en el espacio de nombre indicado
